@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "479f208f-1040-4044-bbcb-3cdf93a9abcc",
+		"name": "Devhooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "https://localhost:44371/api/Account/Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Email\": \"luiza@gmails.com\",\n\t\"Password\": \"Password!123\",\n\t\"ConfirmPassword\": \"Password!123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:24260/api/Account/Register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "24260",
+							"path": [
+								"api",
+								"Account",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "https://localhost:44371/Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "luiza@mendes.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password!123",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:24260/Token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "24260",
+							"path": [
+								"Token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "http://localhost:24260/api/Profiles/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:24260/api/Profiles/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "24260",
+							"path": [
+								"api",
+								"Profiles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:24260/api/Profiles/1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer Eati5-zISnzhtbfOSwQtTopwpwgWDO_neW1o-Q2HrS8wbji3og4Cc-KZrPULUAm_NnORn5vlSG-0-Vk4p0KMq6WpeLtwiC7kK781h0e1qk35qbD_YQIZAH4r9qkf9x_BBveL9BD0xjI4H_fcCWS_j47OvdBhPEKG5lGnvzpQqVkzzRT8u5pmUyXDZKKZc02Dd5OMXeC35o9L08wOHgdRPtOWul8rpB26rfgUBWukN18K2fXyJ-qQlk5Ny7g4xaUo5BSfx2fHwbVhs0CfKX6vb2GSODPfPaRPbLOPvZNk0xjtdIVooSYTdlKS8fWSVW35seCDOH9lafiTTN9WtKH6Pgtw1f-67BoMPGMEDp3ikobl1-LUgcy9NURaaKkAORSs2kHUToYVNoPi0VY4VpdbNkLfWU_Z6y0dGtNdM4BWKYKVR12_v3aZ-WKjlMT1HmjTjLRN0iRaHNvitbqDdXfqhK-BIsAiI9gOWhypbq1fhrOIyvPf62P54R6UPNxbCktC",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:24260/api/Profiles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "24260",
+							"path": [
+								"api",
+								"Profiles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44371/api/Profiles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 72oXgi1vLY29pF9fRKVAfs-x8ljeu9aaKzy3u7tXP4aLXhk6EJo0eyZq_KCmC260zW-t37jYLmekHxUlwZAHcrtj97Lkx8tHDwYDG5M8_-mHqMnAR18JTVOoVq8rcM6ocySC2pZ8SmTBWfqmfhKLMBaeDbkYRR7gsq4f330WsMfkOSRPtOMXeTKjX0gQxQOwljlyqNy3KcbC3Xnpoc6ssHs3_hOYT0DHlwNbDs0aTxQU7mW0bQh11Z23nLORYGCIHHmoEsXCj_W-MnSoziLhkV43qmAclraRCP0A_P6I7W-PsyHNm5DI40KQ5bsJgB8QBc_woUsHmNH9WgZ7tvHQESaBbrZgFtI4XttUlTtGaZZG4wiy-5KPGXr-RAZX1bArx0PZJnTvPJEURsVS95szwnnew7S7ftb4IDMmoJBOMAhOOPMMxZUv5SzjOMuXVVdyaIDg8MevDWbdVsc44lilxyABFthL14BMGLmAEo7jiAXSHDugmH8a3ykMhkzvqhu5"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"AccountId\": \"7682fbd1-5d86-4f62-92bb-3ef9ab476244\",\n\t\"FirstName\": \"Luiza\",\n\t\"LastName\": \"Mendes\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:24260/api/Profiles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "24260",
+							"path": [
+								"api",
+								"Profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:24260/api/Profiles/1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer JdlFzUXd0EtCMaF5qFg2m6driYbMbblg_fNv5TPaUQygMK1RQMeK1ONDEBhpsBzGfcwOXHU6xOMASKLOzsOxv9m3VjpwgAtAvfwnxux-uXaT9jvLL0TVzO0P35SeefZMdDMktLYgTuTUYArDR9OjHMj0K67blr_eAuQ_qkmRWQBDxI6oxUQ36XbxxBMl6EYrKq5fXa0-zx90n6zavSgfGute89IuGj4UVhBovoyF-q1poD2XVxd3EQJuiyCIdcVcaoUsZ9025Jo5SSPhf_830kh_G5LCuXx8QgdQPdpHhLRQvcmIARWczVXez2geJz5zrRayuzj3Me95jfOnvhjcpGtPbhE5OstVhPwY1RRsVFiuMp1cGmmP-F05z1xbSIlcCcHOqF6N8IgetvwRx8lKBjFKQIDppaBIjcjGWDBoZMhn6dBN5uoIVFUdYCF3iYXAdOw8cfDfhS2uaWencOoureHvLNE8lCyNFITb1xVFOZ9ItaF8KrE3gkTygd4Wegkz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Id\": 1,\n\t\"AccountId\": \"7682fbd1-5d86-4f62-92bb-3ef9ab476244\",\n\t\"FirstName\": \"Luizas\",\n\t\"LastName\": \"Mendes\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:24260/api/Profiles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "24260",
+							"path": [
+								"api",
+								"Profiles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:24260/api/Profiles/1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer Eati5-zISnzhtbfOSwQtTopwpwgWDO_neW1o-Q2HrS8wbji3og4Cc-KZrPULUAm_NnORn5vlSG-0-Vk4p0KMq6WpeLtwiC7kK781h0e1qk35qbD_YQIZAH4r9qkf9x_BBveL9BD0xjI4H_fcCWS_j47OvdBhPEKG5lGnvzpQqVkzzRT8u5pmUyXDZKKZc02Dd5OMXeC35o9L08wOHgdRPtOWul8rpB26rfgUBWukN18K2fXyJ-qQlk5Ny7g4xaUo5BSfx2fHwbVhs0CfKX6vb2GSODPfPaRPbLOPvZNk0xjtdIVooSYTdlKS8fWSVW35seCDOH9lafiTTN9WtKH6Pgtw1f-67BoMPGMEDp3ikobl1-LUgcy9NURaaKkAORSs2kHUToYVNoPi0VY4VpdbNkLfWU_Z6y0dGtNdM4BWKYKVR12_v3aZ-WKjlMT1HmjTjLRN0iRaHNvitbqDdXfqhK-BIsAiI9gOWhypbq1fhrOIyvPf62P54R6UPNxbCktC",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:24260/api/Profiles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "24260",
+							"path": [
+								"api",
+								"Profiles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "http://localhost:24260/api/Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:24260/api/Posts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "24260",
+							"path": [
+								"api",
+								"Posts",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "https://localhost:44371/api/Values",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7A-aJyN7jTjYWXtJvumz6BUn2nWItVbXMzU97jHF8eWbPUTouoTrTH5XqwwM8t5-SttwshRkeB0iOmSv6PHvQCfuBo3VI2ZO4dBbKeAq9osDoozdQpIGJfGXb865v8m4LM55Gy7-4Bf_DMWA6j3uy6nK8Us9tmmJ82qpTlKkiLtDQW1jRUHjiFlZKOV5rRkMueGi4Qdr6Ij-_bCag2erqZ8MB-_XW7FoiunEaRP3VLfO0osZglxI3MXhosrlO0fYix9qhzSyWAox5TwYcU6huEMIJ2nLQJDnHkjCCO80hRYj8vzh8BEAIGEvJB8PtVg2WZ_cqSjIBadgY5jzdE2hmqdVk8ogdn7CbJmIM68_2fNr_8lorhT9kyChf_3uHcWiqgRQVM9xD4EGbZzFQ1GuvAXclLCqqQNos6iMLv09EgfoeXd7mUjkpAKiSBDUdbr1cYj-mhankLY1WVN10oYfheN2MfAeGfLzRxbCtXuys1KUpc1ijC-wirsnbghZ_qyk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:24260/api/Values",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "24260",
+					"path": [
+						"api",
+						"Values"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

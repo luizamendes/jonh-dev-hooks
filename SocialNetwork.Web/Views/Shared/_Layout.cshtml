@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @{
+        var username = "";
+        if (Session["user_name"] == null)
+        {
+            username = Session["user_email"]?.ToString();
+        }
+        else
+        {
+            username = Session["user_name"]?.ToString();
+        }
+    }
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("DevHooks", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @if (Session["access_token"] != null)
+                {
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Olá, @username <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Profile/Create">Meu Perfil</a></li>
+                            <li><a href="/PhotoAlbum/Index">Meus Albums</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                }
+                <ul class="nav navbar-nav">
+                    @if (Session["access_token"] == null)
+                    {
+                        <li>@Html.ActionLink("Faça Login", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Registre-se", "Register", "Account")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
